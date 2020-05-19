@@ -45,11 +45,11 @@
             {% block content %}
             {% endblock %}
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js."></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
         <script>
             var csrftoken = Cookies.get('csrftoken');
-            functioncsrfSafeMethod(method) {
+            function csrfSafeMethod(method) {
                 return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
             }
             $.ajaxSetup({
