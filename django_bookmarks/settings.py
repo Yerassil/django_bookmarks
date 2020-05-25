@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from .creds import *
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -146,3 +147,8 @@ SOCIAL_AUTH_TWITTER_SECRET = YOUR_TW_APP_SECRET  # Twitter consumer secret
 
 SOCIAL_AUTH_GOOGLE_KEY = YOUR_GG_APP_KEY  # Google client ID
 SOCIAL_AUTH_GOOGLE_SECRET = YOUR_GG_APP_SECRET  # Google client secret
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail',
+                                        args=[u.username])
+}
