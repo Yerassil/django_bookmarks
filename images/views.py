@@ -8,7 +8,7 @@ from .models import Image
 from common.decorators import ajax_required
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from action.utils import create_action
+from actions.utils import create_action
 
 
 @login_required
